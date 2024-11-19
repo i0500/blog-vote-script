@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const isMainPage = document.querySelector('.blog-posts.hfeed') !== null;
-    
-    if (isMainPage) {
+    if (!window.location.pathname.match(/\/\d{4}\/\d{2}\/.+\.html$/)) {
         return;
     }
     
+    // 2. 필수 요소/설정 체크
+    if (!window.VOTE_CONFIG?.SCRIPT_URL) return;
     if (!document.querySelector('.post-only-script')) return;
-    if (!window.location.href.includes('/20')) return;
-    if (!window.VOTE_CONFIG || !window.VOTE_CONFIG.SCRIPT_URL) return;
-
+    
     const voteSections = document.querySelectorAll('.community-section');
+    if (!voteSections.length) return;
     
     voteSections.forEach(section => {
         const fullSymbol = section.getAttribute('data-symbol');
