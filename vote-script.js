@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    const isMainPage = document.querySelector('.blog-posts.hfeed') !== null;
+    
+    if (isMainPage) {
+        return;
+    }
+    
     if (!document.querySelector('.post-only-script')) return;
     if (!window.location.href.includes('/20')) return;
     if (!window.VOTE_CONFIG || !window.VOTE_CONFIG.SCRIPT_URL) return;
