@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
-    // 2. 필수 요소/설정 체크
     if (!window.VOTE_CONFIG?.SCRIPT_URL) return;
     if (!document.querySelector('.post-only-script')) return;
     
