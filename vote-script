@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const fullSymbol = section.getAttribute('data-symbol');
         if (!fullSymbol) return;
         
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxPr4P538kERICqjJo0wj6fT5jaL8je1eXRo9rFTGt-xMSmZSm5mLRCtoPqhweCpPM6cw/exec';
+        const SCRIPT_URL = 
         const VOTE_COOLDOWN = 30 * 60 * 1000;
         const VOTE_KEY = `vote_${fullSymbol}_${encodeURIComponent(window.location.href)}`;
 
